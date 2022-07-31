@@ -1,3 +1,4 @@
+"use strict";
 
 var swiper = new Swiper(".slide-content", {
   slidesPerView: 3,
@@ -9,32 +10,27 @@ var swiper = new Swiper(".slide-content", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
-    dynamicBullets: true,
+    dynamicBullets: true
   },
   navigation: {
     nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    prevEl: ".swiper-button-prev"
   },
-
   breakpoints: {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 1
     },
     520: {
-      slidesPerView: 2,
+      slidesPerView: 2
     },
     950: {
-      slidesPerView: 3,
-    },
-  },
-});
+      slidesPerView: 3
+    }
+  }
+}); // TYPED JS 
 
-
-// TYPED JS 
-
-const typed = new Typed('.typed', {
+var typed = new Typed('.typed', {
   strings: ['<span class="text-animation">development and sofware ingenier</span>'],
-
   typeSpeed: 75,
   startDelay: 300,
   backSpeed: 75,
@@ -45,39 +41,31 @@ const typed = new Typed('.typed', {
   loopCount: 1,
   shouwCursor: true,
   cursorChar: '|',
-  contentType: 'html',
-
-})
-
-
-// UNLOAD EFECTS 
-
+  contentType: 'html'
+}); // UNLOAD EFECTS 
 // Funcion unload 
+
 function unload() {
   var unload = document.getElementById("unload");
   unload.classList.add("unload");
+} //CARRUCEL
 
-}
 
-//CARRUCEL
+var carrusel = document.querySelector(".carrusel-items");
+var maxScrollLeft = carrusel.scrollWidth - carrusel.offsetWidth;
+var intervalo = null;
+var step = 200;
 
-const carrusel = document.querySelector(".carrusel-items");
-
-let maxScrollLeft = carrusel.scrollWidth - carrusel.offsetWidth;
-
-let intervalo = null;
-let step = 200;
-const start = () => {
-  intervalo = setInterval(() => {
+var start = function start() {
+  intervalo = setInterval(function () {
     carrusel.scrollLeft += step;
+
     if (carrusel.scrollLeft === maxScrollLeft) {
       step = -1;
-    }else if (carrusel.scrollLeft === 0) {
+    } else if (carrusel.scrollLeft === 0) {
       step = step * 1;
     }
-
   }, 40);
-
-}
+};
 
 start();

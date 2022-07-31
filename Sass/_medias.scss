@@ -1,14 +1,18 @@
 
 @media (min-width:850px) {
-    .header h1 {
-      font-size: 120px;
+  .header {
+    .container{
+      h1 {
+        font-size: 120px;
+      }
     }
+  }
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 100px) {
     .header h1 {
-        font-size: 50px;
+        font-size: 10px;
         line-height: 64px;
     }
 
